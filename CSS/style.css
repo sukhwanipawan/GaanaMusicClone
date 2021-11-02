@@ -1,26 +1,14 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
-    padding: 2%;
-}
-
-.navi{
-    /* border: 2px solid red; */
-    text-decoration: none;
-    color: black;
-    display: flex;
-    justify-content: space-between;
-    height: 50px;
-    width: 60%;
     align-items: center;
-}
-
-.navi a{
-    text-decoration: none;
 }
 
 .banner_carousel{
     /* border: 2px solid red; */
+    width: 90%;
     display: flex;
+    margin: auto;
+    text-align: center;
     overflow: hidden;
     position: relative;
     /* padding: 1%; */
@@ -29,7 +17,7 @@ body{
 
 .banner_carousel .banner{
     min-width: 49%;
-    min-height: 450px;
+    min-height: 300px;
     /* border: 2px solid pink; */
     transform: translateX(-50%);
     transition: ease-out;
@@ -65,11 +53,16 @@ body{
 } 
 */
 
+.h-tag{
+    margin-left: 5%;
+}
 .block_display .cards_carousel{
     /* border: 2px solid red; */
     display: flex;
     overflow: hidden;
-    
+    width: 90%;
+    margin: auto;
+    text-align: center;
     position: relative;  
 }
 
