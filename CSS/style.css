@@ -8,11 +8,14 @@ body{
     width: 90%;
     display: flex;
     margin: auto;
+    margin-top: 140px;
+    margin-left: 90px;
     text-align: center;
     overflow: hidden;
-    position: relative;
     /* padding: 1%; */
     gap: 1%;
+    z-index: 0;
+    position: relative;
 }
 
 .banner_carousel .banner{
@@ -35,11 +38,21 @@ body{
 
 .carousel button{
     position: absolute;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
     top: 45%;
     z-index: 1;
     transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 30px;
+    color: transparent;
 }
 
+.carousel button:hover{
+    background: gray;
+    color: black;
+}
 .banner_carousel .b1{
     left: 2%;
 }
@@ -53,15 +66,21 @@ body{
 } 
 */
 
+.block_display{
+    width: 90%;
+    padding-left: 50px;
+    margin: auto;
+}
+
 .h-tag{
-    margin-left: 5%;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 .block_display .cards_carousel{
     /* border: 2px solid red; */
     display: flex;
     overflow: hidden;
-    width: 90%;
-    margin: auto;
+    width: 100%;
     text-align: center;
     position: relative;  
 }
