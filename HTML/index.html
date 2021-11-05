@@ -5,20 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaana</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/navbar.css">
     <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
 </head>
 <body>
-    <div class="navi">
-        <div class="li"><a href="">All</a></div>
-        <div class="li"><a href="">Trending Songs</a></div>
-        <div class="li"><a href="">New Songs</a></div>
-        <div class="li"><a href="">Old Songs</a></div>
-        <div class="li"><a href="">Moods & Genres</a></div>
-        <div class="li"><a href="">Album</a></div>
-        <div class="li"><a href="">Radio</a></div>
-        <div class="li"><a href="">Podcast</a></div>
-        <div class="li"><a href="">My Music</a></div>
-    </div>
+    <div id="navbar_container"></div>
     <div class="banner_carousel carousel">
         <a href="" id="7" class="banner"><img src="https://a10.gaanacdn.com/gn_img/showcase/9MAWe7KyJe/9MAWelG3yJ/size_l_1632642126.webp" alt=""></a>
         <a href="" id="8" class="banner"><img src="https://a10.gaanacdn.com/gn_img/showcase/Rz4W87v3xD/z4W82r6KxD/size_l_1635316327.webp" alt=""></a>
@@ -35,7 +28,10 @@
         <button class="b2">></button>
     </div>
     <div class="block_display">
-        <h2>Trending Songs</h2>
+        <div class="tag">
+            <h2 class="h-tag">Trending Songs</h2>
+            <a href="" class="a-tag">See All</a>
+        </div>
         <div class="cards_carousel carousel trending">
             <button class="b1 former"><</button>
             <button class="b2 lateral">></button>
@@ -43,12 +39,148 @@
     </div>
 
     <div class="block_display">
-        <h2>New Releases</h2>
+        <div class="tag">
+            <h2 class="h-tag">New Releases</h2>
+            <a href="../HTML/newSongs.html" class="a-tag">See All</a>
+        </div>
         <div class="cards_carousel carousel releases">
             <button class="b1 former1"><</button>
             <button class="b2 lateral1">></button>
         </div>
     </div>
+    <div class="block_display">
+        <div class="tag">
+            <h2 class="h-tag">Top Charts</h2>
+            <a href="../HTML/topCharts.html" class="a-tag">See All</a>
+        </div>
+        <div class="cards_carousel carousel topCharts">
+            <button class="b1 former2"><</button>
+            <button class="b2 lateral2">></button>
+        </div>
+    </div>
+    <div class="block_display">
+        <div class="tag">
+            <h2 class="h-tag">Popular In Hindi</h2>
+            <a href="" class="a-tag">See All</a>
+        </div>
+        <div class="cards_carousel carousel popularInHindi">
+            <button class="b1 former3"><</button>
+            <button class="b2 lateral3">></button>
+        </div>
+    </div>
+    <div class="block_display">
+        <div class="tag">
+            <h2 class="h-tag">Featured Artists</h2>
+            <a href="../HTML/artist.html" class="a-tag">See All</a>
+        </div>
+        <div class="cards_carousel carousel artists">
+            <button class="b1 former4"><</button>
+            <button class="b2 lateral4">></button>
+        </div>
+    </div>
+    <div class="block_display">
+        <div class="tag">
+            <h2 class="h-tag">Radio</h2>
+            <a href="../HTML/radio.html" class="a-tag">See All</a>
+        </div>
+        <div class="cards_carousel carousel radio">
+            <button class="b1 former5"><</button>
+            <button class="b2 lateral5">></button>
+        </div>
+    </div>
+    <div class="block_display">
+        <div class="tag">
+            <h2 class="h-tag">Just Arrived</h2>
+            <a href="" class="a-tag">See All</a>
+        </div>
+        <div class="cards_carousel carousel arrived">
+            <button class="b1 former6"><</button>
+            <button class="b2 lateral6">></button>
+        </div>
+    </div>
+    <div class="block_display">
+        <div class="tag">
+            <h2 class="h-tag">Retro Playlists</h2>
+            <a href="" class="a-tag">See All</a>
+        </div>
+        <div class="cards_carousel carousel retro">
+            <button class="b1 former7"><</button>
+            <button class="b2 lateral7">></button>
+        </div>
+    </div>
+    <div class="block_display">
+        <div class="tag">
+            <h2 class="h-tag">Gaana Recommends</h2>
+            <a href="" class="a-tag">See All</a>
+        </div>
+        <div class="cards_carousel carousel recommends">
+            <button class="b1 former8"><</button>
+            <button class="b2 lateral8">></button>
+        </div>
+    </div>
+    <div class="block_display">
+        <div class="tag">
+            <h2 class="h-tag">Gaana Originals</h2>
+            <a href="" class="a-tag">See All</a>
+        </div>
+        <div class="cards_carousel carousel originals">
+            <button class="b1 former9"><</button>
+            <button class="b2 lateral9">></button>
+        </div>
+    </div>
+    <div class="block_display">
+        <div class="tag">
+            <h2 class="h-tag">Popular In English</h2>
+            <a href="" class="a-tag">See All</a>
+        </div>
+        <div class="cards_carousel carousel popularInEnglish">
+            <button class="b1 former10"><</button>
+            <button class="b2 lateral10">></button>
+        </div>
+    </div>
+    <div class="block_display">
+        <div class="tag">
+            <h2 class="h-tag">Star Gallery</h2>
+            <a href="" class="a-tag">See All</a>
+        </div>
+        <div class="cards_carousel carousel starGallery">
+            <button class="b1 former11"><</button>
+            <button class="b2 lateral11">></button>
+        </div>
+    </div>
+    <div class="block_display">
+        <div class="tag">
+            <h2 class="h-tag">Bhakti</h2>
+            <a href="" class="a-tag">See All</a>
+        </div>
+        <div class="cards_carousel carousel bhakti">
+            <button class="b1 former12"><</button>
+            <button class="b2 lateral12">></button>
+        </div>
+    </div>
+    <div class="block_display">
+        <div class="tag">
+            <h2 class="h-tag">Mehfil-E-Ghazal</h2>
+            <a href="" class="a-tag">See All</a>
+        </div>
+        <div class="cards_carousel carousel mehfilEGhazal">
+            <button class="b1 former13"><</button>
+            <button class="b2 lateral13">></button>
+        </div>
+    </div>
+
+    <div id="footer">
+         
+    </div>
     <script src="../JS/script.js"></script>
+    <script type="module" src="../JS/NavbarFunction.js"></script>
+    <script type="module">
+        import getFooter from '/Components/footerPart.js'
+
+        getFooter().then(res => {
+            document.getElementById("footer").innerHTML = res;
+        })
+
+    </script>
 </body>
 </html>
