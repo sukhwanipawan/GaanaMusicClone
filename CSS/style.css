@@ -9,7 +9,7 @@ body{
     display: flex;
     margin: auto;
     margin-top: 140px;
-    margin-left: 90px;
+    margin-left: 80px;
     text-align: center;
     overflow: hidden;
     /* padding: 1%; */
@@ -68,13 +68,23 @@ body{
 
 .block_display{
     width: 90%;
-    padding-left: 50px;
+    padding-left: 30px;
     margin: auto;
 }
-
+.tag{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 .h-tag{
     margin-top: 30px;
     margin-bottom: 20px;
+}
+.a-tag{
+   text-decoration: none;
+   color: rgb(231,44,48);
+   font-size: 12px;
+   font-weight: 400;
 }
 .block_display .cards_carousel{
     /* border: 2px solid red; */

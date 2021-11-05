@@ -24,6 +24,7 @@ profile.addEventListener("click", detailsProfile);
 
 function detailsProfile() {
     document.getElementById("profileData").classList.toggle("view");
+    document.getElementById("mytopnav").style.zIndex = "1";
 }
 
 // open and close for side bar
@@ -202,6 +203,16 @@ var logout = document.getElementById("logOut");
 logout.addEventListener("click", afterLogout);
 
 function afterLogout() {
+    document.getElementById("user").style.display = "block";
+    document.getElementById("profile").style.display = "none";
+    document.getElementById("subscription").style.display = "block";
+    document.getElementById("after-login").style.display = "none";
+}
+
+var logout1 = document.getElementById("log-Out");
+logout1.addEventListener("click", Logout);
+
+function Logout() {
     document.getElementById("user").style.display = "block";
     document.getElementById("profile").style.display = "none";
     document.getElementById("subscription").style.display = "block";

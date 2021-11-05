@@ -231,10 +231,10 @@ function navbar(){
             <a href="">Sign Up</a>
         </div>
     </div>
-    <a href="">Home</a>
-    <a href="">Radio</a>
-    <a href="">Podcast</a>
-    <a href="">My Music</a>
+    <a href="../HTML/index.html">Home</a>
+    <a href="../HTML/radio.html">Radio</a>
+    <a href="../HTML/podcast.html">Podcast</a>
+    <a href="../HTML/mymusic.html">My Music</a>
     <a href="">India's Music</a>
     <a href="">
         Language
@@ -256,13 +256,21 @@ function navbar(){
         <h1>Quick Access</h1>
     </a>
     <a href="">Trending Songs</a>
-    <a href="">New Songs</a>
+    <a href="../HTML/newSongs.html">New Songs</a>
     <a href="">Old Songs</a>
-    <a href="">Album</a>
-    <a href="">Artist</a>
+    <a href="../HTML/album.html">Album</a>
+    <a href="../HTML/artist.html">Artist</a>
     <a href="">Lyrics</a>
     <a href="">Music Lables</a>
     <a href="">Genres</a>
+    <hr>
+    <a href="">
+       <h1>Account</h1>
+    </a>
+    <a href="">Profile</a>
+    <a href="">Settings</a>
+    <a href="" id="log-Out">Log Out</a>
+    <div class="space"></div>
 </div>
 
 <!-- Login by Popup code-->
@@ -358,9 +366,9 @@ function navbar(){
 
 <!-- Second Navbar -->
 <div class="topnav" id="mytopnav">
-    <a href="#" class="active">All</a>
+    <a href="../HTML/index.html" class="active">All</a>
     <a href="#">Trending Songs</a>
-    <a href="#">New Songs</a>
+    <a href="../HTML/newSongs.html">New Songs</a>
     <a href="#">Old Songs</a>
     <div class="dropdown">
         <button class="dropbtn">Moods & Genres
@@ -384,10 +392,10 @@ function navbar(){
             <a href="#">Friendship</a>
         </div>
     </div>
-    <a href="#">Album</a>
-    <a href="#">Radio</a>
-    <a href="#">Podcast</a>
-    <a href="#">My Music</a>
+    <a href="../HTML/album.html">Album</a>
+    <a href="../HTML/radio.html">Radio</a>
+    <a href="../HTML/podcast.html">Podcast</a>
+    <a href="../HTML/mymusic.html">My Music</a>
 </div>`
 }
 

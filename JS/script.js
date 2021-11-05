@@ -138,7 +138,16 @@ var top_cards = () => {
     var type = "result";
     var url = "bollywood-masala";
     display_c(type, url, ".topCharts");
-    display_c(type, url, ".topCharts");
+    display_c(type, "hindi-romantic-top", ".topCharts");
+    display_c(type, "90s-hindi-top", ".topCharts");
+    display_c(type, "top-searches", ".topCharts");
+    display_c(type, "pop-top", ".topCharts");
+    display_c(type, "hindi-dance-top", ".topCharts");
+    display_c(type, "daily-top", ".topCharts");
+    display_c(type, "Bhakti-top", ".topCharts");
+    display_c(type, "punjabi-top", ".topCharts");
+    display_c(type, "haryanavi-top", ".topCharts");
+    display_c(type, "Arijit-singh-top", ".topCharts");
 }
 top_cards();
 

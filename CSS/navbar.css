@@ -145,18 +145,27 @@ body {
 
 .languages {
     display: none;
-    position: absolute;
+    position: fixed;
     width: 300px;
     height: 300px;
     margin-left: -100px;
-    top: 30px;
+    top: 120px;
     /* overflow: hidden; */
     overflow-y: scroll;
     border: 1px solid rgb(255, 255, 255);
     border-radius: 20px;
     background-color: rgb(255, 255, 255);
     padding: 10px;
-    z-index: 1;
+}
+
+.languages::-webkit-scrollbar{
+    width: 3px;
+}
+.languages::-webkit-scrollbar-track{
+    border-radius: 2px;
+}
+.languages::-webkit-scrollbar-thumb{
+    background-color: tomato;
 }
 
 .bottom {
@@ -245,7 +254,7 @@ body {
 
 .dataProfile {
     display: none;
-    position: absolute;
+    position: fixed;
     width: 150px;
     margin-left: -100px;
     top: 50px;
@@ -254,7 +263,6 @@ body {
     border-radius: 20px;
     background-color: rgb(255, 255, 255);
     padding: 10px;
-    z-index: 1;
 }
 
 .dataProfile img {
@@ -318,7 +326,17 @@ body {
     background-color: rgb(255, 255, 255);
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    padding-top: 50px;
+}
+
+.sidebar::-webkit-scrollbar{
+    width: 3px;
+}
+.sidebar::-webkit-scrollbar-track{
+    border-radius: 2px;
+}
+.sidebar::-webkit-scrollbar-thumb{
+    background-color: tomato;
 }
 
 .sidebar a {
@@ -344,6 +362,10 @@ body {
     color: black;
     padding: 10px 15px;
     border: none;
+}
+
+.space{
+    margin-top: 100px;
 }
 
 @media screen and (max-width: 450px) {
@@ -486,6 +508,7 @@ input[type=number] {
     color: white;
     font-size: 35px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .close:focus {
@@ -637,16 +660,23 @@ input[type=number] {
 
 .dropdown-content {
     display: none;
-    position: absolute;
     background-color: rgb(255, 255, 255);
     min-width: 160px;
     height: 350px;
     overflow: hidden;
     overflow-y: auto;
     box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
 }
 
+.dropdown-content::-webkit-scrollbar{
+    width: 3px;
+}
+.dropdown-content::-webkit-scrollbar-track{
+    border-radius: 2px;
+}
+.dropdown-content::-webkit-scrollbar-thumb{
+    background-color: tomato;
+}
 .dropdown-content a {
     float: none;
     color: rgb(82, 64, 64);
@@ -669,6 +699,8 @@ input[type=number] {
 
 .dropdown:hover .dropdown-content {
     display: block;
+    position: fixed;
+    z-index: 9999;
 }
 
 @media screen and (max-width: 992px) {
@@ -678,7 +710,7 @@ input[type=number] {
         position: fixed;
         overflow-x: auto;
         cursor: pointer;
-        top: 100px;
+        top: 80px;
         height: 100px;
     }
 }
