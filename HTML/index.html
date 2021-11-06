@@ -172,6 +172,24 @@
     <div id="footer">
          
     </div>
+    <div class="bottom">
+        <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100">
+        <div class="playbox">
+            <div class="songInfo">
+                <img src="playing.gif" width="42px" alt="" id="gif"> <span id="masterSongName">Warriyo - Mortals [NCS Release]</span>
+            </div>
+            <div class="timer">
+                <p>00:00 / 05:20</p>
+            </div>
+            <div class="icons">
+                <!-- fontawesome icons -->
+                <i class="fas fa-3x fa-step-backward" id="previous"></i>
+                <i class="far fa-3x fa-play-circle" id="masterPlay"></i>
+                <i class="fas fa-3x fa-step-forward" id="next"></i>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/26504e4a1f.js" crossorigin="anonymous"></script>
     <script src="../JS/script.js"></script>
     <script type="module" src="../JS/NavbarFunction.js"></script>
     <script type="module">
@@ -180,7 +198,8 @@
         getFooter().then(res => {
             document.getElementById("footer").innerHTML = res;
         })
-
     </script>
+
+    <script src="audio.js"></script>
 </body>
 </html>
