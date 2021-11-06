@@ -3,7 +3,7 @@ function navbar(){
     <nav id="navbar">
     <button class="openbtn" id="opensidebar">☰</button>
     <div id="icon-box">
-        <a href="" class="nav-icon">
+        <a href="../HTML/index.html" class="nav-icon">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuDGbnzK1jpaDDIMO_HMj7s51AHR-_eoN_Fw&usqp=CAU"
                 alt="">
             <img class="logo"
@@ -235,7 +235,7 @@ function navbar(){
     <a href="../HTML/radio.html">Radio</a>
     <a href="../HTML/podcast.html">Podcast</a>
     <a href="../HTML/mymusic.html">My Music</a>
-    <a href="">India's Music</a>
+    <a href="../HTML/popularInHindi.html">India's Music</a>
     <a href="">
         Language
         <div>(Set Music language)</div>
@@ -255,14 +255,14 @@ function navbar(){
     <a href="">
         <h1>Quick Access</h1>
     </a>
-    <a href="">Trending Songs</a>
+    <a href="../HTML/trendingSongs.html">Trending Songs</a>
     <a href="../HTML/newSongs.html">New Songs</a>
-    <a href="">Old Songs</a>
+    <a href="../HTML/oldSongs.html">Old Songs</a>
     <a href="../HTML/album.html">Album</a>
     <a href="../HTML/artist.html">Artist</a>
-    <a href="">Lyrics</a>
-    <a href="">Music Lables</a>
-    <a href="">Genres</a>
+    <a href="../HTML/lyrics.html">Lyrics</a>
+    <a href="../HTML/musicLables.html">Music Lables</a>
+    <a href="../HTML/genres.html">Genres</a>
     <hr>
     <a href="">
        <h1>Account</h1>
@@ -367,9 +367,9 @@ function navbar(){
 <!-- Second Navbar -->
 <div class="topnav" id="mytopnav">
     <a href="../HTML/index.html" class="active">All</a>
-    <a href="#">Trending Songs</a>
+    <a href="../HTML/trendingSongs.html">Trending Songs</a>
     <a href="../HTML/newSongs.html">New Songs</a>
-    <a href="#">Old Songs</a>
+    <a href="../HTML/oldSongs.html">Old Songs</a>
     <div class="dropdown">
         <button class="dropbtn">Moods & Genres
             <i class="fa fa-caret-down"></i>
