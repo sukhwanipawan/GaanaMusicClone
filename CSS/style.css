@@ -123,3 +123,74 @@ body{
     right: 0%;
     transform: translateY(-100%);
 }
+
+
+
+
+/* player Css */
+.bottom {
+    display: block;
+    position: sticky;
+    width: 100%;
+    bottom: 0;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    color: white;
+    margin: auto;
+}
+
+.playbox {
+    display: flex;
+    color: black;
+}
+
+.songInfo {
+    float: left;
+    margin-left: 50px;
+}
+
+.timer {
+    float: left;
+    margin-left: 15%;
+    border: 1px solid black;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 20px;
+    font-size: 12px;
+    padding-bottom: 10px;
+}
+
+.icons {
+    margin-top: 8px;
+    float: left;
+    margin-left: 10%;
+}
+
+.icons i {
+    cursor: pointer;
+    color: black;
+    font-size: 20px;
+    margin-bottom: 40px;
+    margin-left: 5px;
+}
+
+#myProgressBar {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    margin-top: 0;
+    background-color: tomato;
+}
+
+#masterPlay {
+    background-color: rgb(231, 44, 48);
+    border-radius: 50%;
+}
+
+.songInfo img{
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
+}
