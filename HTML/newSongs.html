@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,28 +10,29 @@
     <link rel="stylesheet" href="../CSS/navbar.css">
     <link rel="stylesheet" href="../CSS/footer.css">
     <style>
-        .block_display{
+        .block_display {
             margin-top: 200px;
             width: 90%;
             padding-left: 50px;
             margin: auto;
             z-index: 0;
         }
-        
-        .h-tag{
+
+        .h-tag {
             margin-top: 30px;
             margin-bottom: 20px;
             padding-bottom: 20px;
-            border-bottom: 1px solid rgb(229,229,229);
+            border-bottom: 1px solid rgb(229, 229, 229);
         }
-        .block_display .cards_carousel{
+
+        .block_display .cards_carousel {
             width: 100%;
             float: left;
             text-align: center;
             position: relative;
         }
-        
-        .block_display .cards_carousel .card{
+
+        .block_display .cards_carousel .card {
             margin: 20px;
             margin-bottom: 60px;
             transition: ease-out;
@@ -41,40 +43,127 @@
             width: 180px;
             height: 180px;
         }
-        
-        .block_display .cards_carousel .card img{
+
+        .block_display .cards_carousel .card img {
             width: 100%;
             height: 100%;
             border-radius: 5px;
         }
 
-        .topnav{
+        .topnav {
             position: relative;
             z-index: 0;
             margin-bottom: 100px;
         }
+
+        .bottom {
+            display: block;
+            position: sticky;
+            width: 100%;
+            bottom: 0;
+            height: 50px;
+            background-color: rgb(255, 255, 255);
+            color: white;
+            margin: auto;
+        }
+
+        .playbox {
+            display: flex;
+            color: black;
+        }
+
+        .songInfo {
+            float: left;
+            margin-left: 50px;
+        }
+
+        .timer {
+            float: left;
+            margin-left: 15%;
+            border: 1px solid black;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 120px;
+            height: 20px;
+            font-size: 12px;
+            padding-bottom: 10px;
+            
+        }
+
+        .icons {
+            margin-top: 8px;
+            float: left;
+            margin-left: 10%;
+        }
+
+        .icons i {
+            cursor: pointer;
+            color: black;
+            font-size: 20px;
+            margin-bottom: 40px;
+            margin-left: 5px;
+        }
+
+        #myProgressBar {
+            width: 100%;
+            height: 2px;
+            cursor: pointer;
+            margin-top: 0;
+            background-color: tomato;
+        }
+
+        #masterPlay {
+            background-color: rgb(231, 44, 48);
+            border-radius: 50%;
+        }
+        
+        .songInfo img{
+            opacity: 0;
+            transition: opacity 0.4s ease-in;
+        }
     </style>
 </head>
+
 <body>
     <div id="navbar_container"></div>
     <div class="block_display">
         <h1 class="h-tag">New Songs 2021</h1>
         <div class="cards_carousel releases">
-           
+
         </div>
     </div>
 
     <div id="footer">
-         
+
     </div>
+    <div class="bottom">
+        <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100">
+        <div class="playbox">
+            <div class="songInfo">
+                <img src="playing.gif" width="42px" alt="" id="gif"> <span id="masterSongName">Warriyo - Mortals [NCS Release]</span>
+            </div>
+            <div class="timer">
+                <p>00:00 / 05:20</p>
+            </div>
+            <div class="icons">
+                <!-- fontawesome icons -->
+                <i class="fas fa-3x fa-step-backward" id="previous"></i>
+                <i class="far fa-3x fa-play-circle" id="masterPlay"></i>
+                <i class="fas fa-3x fa-step-forward" id="next"></i>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/26504e4a1f.js" crossorigin="anonymous"></script>
     <script type="module" src="../JS/NavbarFunction.js"></script>
     <script type="module">
         import getFooter from '/Components/footerPart.js'
-        
+
         getFooter().then(res => {
             document.getElementById("footer").innerHTML = res;
         })
-        
+
     </script>
     <script>
 
@@ -120,5 +209,8 @@
         }
         releases_cards();
     </script>
+
+    <script src="audio.js"></script>
 </body>
+
 </html>
