@@ -1,4 +1,4 @@
-function navbar(){
+function navbar() {
     return `
     <nav id="navbar">
     <button class="openbtn" id="opensidebar">☰</button>
@@ -396,6 +396,22 @@ function navbar(){
     <a href="../HTML/radio.html">Radio</a>
     <a href="../HTML/podcast.html">Podcast</a>
     <a href="../HTML/mymusic.html">My Music</a>
+</div>
+
+<div id="myOverlay" class="overlay">
+    <span class="closebtn" id="closeSearch" title="Close Overlay">×</span>
+    <div class="overlay-content">
+    <div class="display">
+    <div class="tag">
+        <h2 class="h-tag">Trending Songs</h2>
+        <a href="../HTML/trendingSongs.html" class="a-tag">See All</a>
+    </div>
+    <div class="cards_carousel carousel trend">
+        <button class="b1 form"><</button>
+        <button class="b2 later">></button>
+    </div>
+    </div>
+    </div>
 </div>`
 }
 

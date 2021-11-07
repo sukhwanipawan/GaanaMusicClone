@@ -93,7 +93,7 @@ window.onclick = function (event) {
 var modal1 = document.getElementById('signup');
 window.onclick = function (event) {
     if (event.target == modal1) {
-        modal.style.display = "none";
+        modal1.style.display = "none";
     }
 }
 
@@ -217,4 +217,136 @@ function Logout() {
     document.getElementById("profile").style.display = "none";
     document.getElementById("subscription").style.display = "block";
     document.getElementById("after-login").style.display = "none";
+}
+
+var open = document.getElementById("search");
+open.addEventListener("click",openSearch);
+function openSearch() {
+    document.getElementById("myOverlay").style.display = "block";
+  }
+  
+  var close = document.getElementById("closeSearch");
+  close.addEventListener("click",closeSearch);
+  function closeSearch() {
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+async function requestData(type, query) {
+    try {
+        let res = await fetch(
+            `http://127.0.0.1:5000/${type}/?query=${query}&lyrics=false`
+        )
+        let data = await res.json()
+        console.log(data);
+        return await data;
+    } catch {
+        console.log("Something went wrong");
+    }
+}
+
+var display_card = (type, url, location) => {
+    var data = requestData(type, url);
+    data.then((value) => {
+        let songs = value.songs;
+        let doc = document.body;
+        let cardsCarousel = doc.querySelector(`${location}`);
+        for (var i = 0; i < songs.length; i++) {
+            let card = document.createElement("a");
+            card.setAttribute("class", "card");
+            card.href = songs[i].media_url;
+            let img = document.createElement("img");
+            img.src = songs[i].image;
+            let name = document.createElement("p");
+            name.textContent = songs[i].song;
+            name.style.margin = "0%";
+            name.style.fontWeight = "bold";
+            card.append(img, name);
+            cardsCarousel.append(card);
+        }
+    })
+}
+
+
+var trending_cards = () => {
+    var type = "result";
+    var url = "https://www.jiosaavn.com/featured/trending-songs/Me5RridRfDk_";
+    display_card(type, url, ".trend");
+}
+trending_cards();
+
+// * Button controls for Trending
+var form = document.body.querySelector(".form");
+var later = document.body.querySelector(".later");
+
+var size2 = 0;
+
+var back = (e) => {
+    var cards = e.target.parentNode.querySelectorAll(".card");
+    // console.log(cards);
+    size2 += 900;
+
+    for (var i = 0; i < cards.length; i++) {
+        // console.log(cards[i]);
+        cards[i].style.transform = `translateX(${size2}%)`;
+    }
+    checkButton();
+}
+var forward = (e) => {
+    var cards = e.target.parentNode.querySelectorAll(".card");
+    // console.log(cards);
+    size2 -= 900;
+    for (var i = 0; i < cards.length; i++) {
+        // console.log(cards[i]);
+        cards[i].style.transform = `translateX(${size2}%)`;
+    }
+    checkButton();
+}
+var checkButton = () => {
+    // console.log(size2);
+    if (size2 >= 0) {
+        form.disabled = true;
+    }
+    else {
+        form.disabled = false;
+    }
+}
+checkButton();
+form.addEventListener("click", back);
+later.addEventListener("click", forward);
+
+
+open.addEventListener("keyup",handleSearch);
+
+function handleSearch(){
+    var value = document.getElementById("search").value;
+    if(value!=="")
+    {
+        display_c("result",value,".trend");
+    }
+    else{
+        trending_cards();
+    }
+}
+
+var display_c = (type, url, location) => {
+    var data = requestData(type, url);
+    data.then((value) => {
+        let doc = document.body;
+        let cardsCarousel = doc.querySelector(`${location}`);
+        cardsCarousel.innerHTML="";
+        doc.querySelector(".h-tag").innerHTML = `${url} Songs`;
+        for (var i = 0; i < value.length; i++) {
+            let card = document.createElement("a");
+            card.setAttribute("class", "card");
+            card.href = value[i].media_url;
+            let img = document.createElement("img");
+            img.src = value[i].image;
+            let name = document.createElement("p");
+            name.textContent = value[i].song;
+            name.style.margin = "0%";
+            name.style.fontWeight = "bold";
+            card.append(img, name);
+            cardsCarousel.append(card);
+        }
+    })
 }
