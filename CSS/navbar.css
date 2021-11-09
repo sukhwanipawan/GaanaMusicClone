@@ -710,8 +710,8 @@ input[type=number] {
         position: fixed;
         overflow-x: auto;
         cursor: pointer;
-        top: 80px;
-        height: 100px;
+        top: 90px;
+        height: 80px;
     }
 }
 
