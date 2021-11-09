@@ -260,9 +260,9 @@ function navbar() {
     <a href="../HTML/oldSongs.html">Old Songs</a>
     <a href="../HTML/album.html">Album</a>
     <a href="../HTML/artist.html">Artist</a>
-    <a href="../HTML/lyrics.html">Lyrics</a>
-    <a href="../HTML/musicLables.html">Music Lables</a>
-    <a href="../HTML/genres.html">Genres</a>
+    <a href="../HTML/oldSongs.html">Lyrics</a>
+    <a href="../HTML/topCharts.html">Music Lables</a>
+    <a href="../HTML/popularInHindi.html">Genres</a>
     <hr>
     <a href="">
        <h1>Account</h1>
