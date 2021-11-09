@@ -58,7 +58,7 @@ async function getFooter(){
                     <a href="#">Bengali</a>
                     <a href="#">Gujarati Songs</a>
                     <a href="#">Haryanvi</a>
-                    <a class="viewAll" href="#">View all</a>
+                    <a class="viewAll" href="../HTML/album.html">View all</a>
                 </div>
             </div>
             <div class="qlinks">
@@ -77,7 +77,7 @@ async function getFooter(){
                     <a href="#">Disco Songs</a>
                     <a href="#">Sufi Songs</a>
                     <a href="#">Love Songs</a>
-                    <a class="viewAll" href="#">View all</a>
+                    <a class="viewAll" href="../HTML/popularInHindi.html">View all</a>
                 </div>
             </div>
             <div class="qlinks">
@@ -98,7 +98,7 @@ async function getFooter(){
                     <a href="#">Guru Randhawa</a>
                     <a href="#">Justin Bieber</a>
                     <a href="#">BTS</a>
-                    <a class="viewAll" href="#">View all</a>
+                    <a class="viewAll" href="../HTML/artist.html">View all</a>
                 </div>
             </div>
             <div class="qlinks">
@@ -121,7 +121,7 @@ async function getFooter(){
                     <a href="#">Haryanvi Songs</a>
                     <a href="#">Odia Songs</a>
                     <a href="#">Urdu Songs</a>
-                    <a class="viewAll" href="#">View all</a>
+                    <a class="viewAll" href="../HTML/newSongs.html">View all</a>
                 </div>
             </div>
             <div class="qlinks">
@@ -144,7 +144,7 @@ async function getFooter(){
                     <a href="#">Stay</a>
                     <a href="#">Jalebi Baby</a>
                     <a href="#">Raataan Lambiyan</a>
-                    <a class="viewAll" href="#">View all</a>
+                    <a class="viewAll" href="../HTML/trendingSongs.html">View all</a>
                 </div>
             </div>
             <div class="qlinks">
@@ -167,7 +167,7 @@ async function getFooter(){
                     <a href="#">Durga Maa Ki Aarti</a>
                     <a href="#">Shershaah</a>
                     <a href="#">Bell Bottom</a>
-                    <a class="viewAll" href="#">View all</a>
+                    <a class="viewAll" href="../HTML/topCharts.html">View all</a>
                 </div>
             </div>
             <div class="qlinks">
@@ -190,7 +190,7 @@ async function getFooter(){
                     <a href="#">Navratri Song Lyrics</a>
                     <a href="#">Garba Song Lyrics</a>
                     <a href="#">Ambe Maa Aarti Lyrics</a>
-                    <a class="viewAll" href="#">View all</a>
+                    <a class="viewAll" href="../HTML/album.html">View all</a>
                 </div>
             </div>
             <div class="qlinks">
@@ -213,7 +213,7 @@ async function getFooter(){
                     <a href="#">Old Urdu Songs</a>
                     <a href="#">Old Assamese Songs</a>
                     <a href="#">Old Rajasthani Songs</a>
-                    <a class="viewAll" href="#">View all</a>
+                    <a class="viewAll" href="../HTML/oldSongs.html">View all</a>
                 </div>
             </div>
             <div class="qlinks">
@@ -233,7 +233,7 @@ async function getFooter(){
                     <a href="#">Chal Oye</a>
                     <a href="#">Waake</a>
                     <a href="#">Prada</a>
-                    <a class="viewAll" href="#">View all</a>
+                    <a class="viewAll" href="../HTML/radio.html">View all</a>
                 </div>
             </div>
             <div class="qlinks">
@@ -251,7 +251,7 @@ async function getFooter(){
                     <a href="#">MD Motivation</a>
                     <a href="#">RJ Kartik Motivation</a>
                     <a href="#">Choti Si Kahani</a>
-                    <a class="viewAll" href="#">View all</a>
+                    <a class="viewAll" href="../HTML/podcast.html">View all</a>
                 </div>
             </div>
         </div>
