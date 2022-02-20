@@ -12,3 +12,6 @@ The members of the Ninjas Group Project are
     Satya prakash Mall
     Pawan Sukhwani and
 2 Rookie Developers Working on Cloning the Gaana Music website.
+
+
+https://medium.com/@thesatyamall123/project-cloning-of-gaana-com-74d7627aa9bf
