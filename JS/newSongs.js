@@ -1,7 +1,7 @@
 window.addEventListener("load", () => {getData()});
         
 function fetchingPlayList(){
-    return fetch(`https://gaana-data-api.herokuapp.com/oldSongs`)
+    return fetch(`https://gaana-data-api.herokuapp.com/featuredHindi`)
     .then(res => res.json())
 }
 
