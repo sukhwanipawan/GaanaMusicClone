@@ -8,6 +8,7 @@
     <title>New Songs</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../CSS/navbar.css">
+    <link rel="stylesheet" href="/CSS/trendingSongs.css" />
     <link rel="stylesheet" href="../CSS/footer.css">
     <style>
         .block_display {
@@ -171,10 +172,53 @@
 
 <body>
     <div id="navbar_container"></div>
-    <div class="block_display">
+    <!-- <div class="block_display">
         <h1 class="h-tag">New Songs 2021</h1>
         <div class="cards_carousel releases">
 
+        </div> -->
+        <div id="wholeContainer">
+            <section id="topSection">
+                <div id="imgDiv">
+                    <img id="posterImage" alt=""/>
+                </div>
+    
+                <div id="infoDiv">
+                    <div id="headingTitle">
+                        <h1>New Songs</h1>
+                    </div>
+                    <div id="playlistInformation">
+                        <span class="playlist-details">Top New hits, refreshed</span>
+                        <br/>
+                        <span class="playlist-details">Created by Gaana</span>
+                        <br/>
+                        <span class="playlist-details numberOfTracks">20 Tracks</span>
+                    </div>
+                    <div id="playBtnDiv">
+                        
+                            <button id="playBttn">
+                                <a href="#" id="aTagPlayBtn">Play</a>
+                            </button>
+                    </div>
+                </div>
+            </section>
+            <br/><br/><br/><br/>
+            <section class="song-list">
+                <ul class="row-heading">
+                    <li class="individual-li"></li>
+    
+                    <li class="individual-li">
+                        <div class="li-div-track">Track</div>
+                    </li>
+                    <li class="individual-li">
+                        <div class="li-div-artists">Artists</div>
+                    </li>
+                    <li class="individual-li">
+                        <div class="li-div-duration">Duration</div>
+                    </li>
+                </ul>
+            </section>
+            <hr/>
         </div>
     </div>
 
@@ -217,6 +261,7 @@
     </div>
     <script src="https://kit.fontawesome.com/26504e4a1f.js" crossorigin="anonymous"></script>
     <script type="module" src="../JS/NavbarFunction.js"></script>
+    <script type="text/javascript" src="/JS/newSongs.js"></script>
     <script type="module">
         import getFooter from '/Components/footerPart.js'
 

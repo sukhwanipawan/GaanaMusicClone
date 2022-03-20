@@ -1,7 +1,7 @@
 window.addEventListener("load", () => {getData()});
         
 function fetchingPlayList(){
-    return fetch(`http://127.0.0.1:5000/result/?query=https://www.jiosaavn.com/featured/weekly-top-songs/8MT-LQlP35c_&lyrics=false`)
+    return fetch(`https://gaana-data-api.herokuapp.com/romanticHits`)
     .then(res => res.json())
 }
 
@@ -9,7 +9,7 @@ async function getData(){
     try{
         const result = await fetchingPlayList()
         // console.log('result: ', result);
-        makeChanges(result);
+        makeChanges(result[0]);
 
     }
     catch(err) {
