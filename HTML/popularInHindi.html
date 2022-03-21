@@ -77,7 +77,7 @@
         window.addEventListener("load", () => { getData() });
 
         function fetchingPlayList() {
-            return fetch(`http://127.0.0.1:5000/result/?query=https://www.jiosaavn.com/featured/popular-in-hindi-songs/8MT-LQlP35c_&lyrics=false`)
+            return fetch(`https://gaana-data-api.herokuapp.com/romanticHits`)
                 .then(res => res.json())
         }
 
@@ -96,16 +96,16 @@
 
         function makeChanges(dataFromAPI) {
             const posterImage = document.getElementById("posterImage");
-            posterImage.src = dataFromAPI.image;
+            posterImage.src = dataFromAPI[0].image;
 
             const numberOfTracks = document.getElementsByClassName("numberOfTracks");
             numberOfTracks[0].textContent = "";
-            numberOfTracks[0].textContent += dataFromAPI.songs.length + " Songs";
+            numberOfTracks[0].textContent += dataFromAPI[0].songs.length + " Songs";
 
             const wholeContainer = document.getElementById("wholeContainer");
-            console.log(dataFromAPI.songs.length);
-            for (let i = 0; i < dataFromAPI.songs.length; i++) {
-                let sec = createCardsForSongs(dataFromAPI.songs[i]);
+            console.log(dataFromAPI[0].songs.length);
+            for (let i = 0; i < dataFromAPI[0].songs.length; i++) {
+                let sec = createCardsForSongs(dataFromAPI[0].songs[i]);
                 wholeContainer.append(sec);
                 wholeContainer.innerHTML += "<hr/>"
             }

@@ -231,11 +231,9 @@ function openSearch() {
     document.getElementById("myOverlay").style.display = "none";
 }
 
-async function requestData(type, query) {
+async function requestData(url) {
     try {
-        let res = await fetch(
-            `http://127.0.0.1:5000/${type}/?query=${query}&lyrics=false`
-        )
+        let res = await fetch(url)
         let data = await res.json()
         console.log(data);
         return await data;
@@ -244,10 +242,10 @@ async function requestData(type, query) {
     }
 }
 
-var display_card = (type, url, location) => {
-    var data = requestData(type, url);
+var display_card = (url, location) => {
+    var data = requestData(url);
     data.then((value) => {
-        let songs = value.songs;
+        let songs = value[0].songs;
         let doc = document.body;
         let cardsCarousel = doc.querySelector(`${location}`);
         for (var i = 0; i < songs.length; i++) {
@@ -268,9 +266,8 @@ var display_card = (type, url, location) => {
 
 
 var trending_cards = () => {
-    var type = "result";
-    var url = "https://www.jiosaavn.com/featured/trending-songs/Me5RridRfDk_";
-    display_card(type, url, ".trend");
+    var url = "https://gaana-data-api.herokuapp.com/romanticHits";
+    display_card(url, ".trend");
 }
 trending_cards();
 

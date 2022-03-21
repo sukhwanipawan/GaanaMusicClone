@@ -78,11 +78,9 @@
     </script>
     <script>
 
-        async function requestData(type, query) {
+        async function requestData(url) {
             try {
-                let res = await fetch(
-                    `http://127.0.0.1:5000/${type}/?query=${query}&lyrics=false`
-                )
+                let res = await fetch(url)
                 let data = await res.json()
                 console.log(data);
                 return await data;
@@ -91,19 +89,21 @@
             }
         }
         
-        var display_c = (type, url, location) => {
-            var data = requestData(type, url);
+        var display_card = (url, location) => {
+            var data = requestData(url);
+            console.log("Satya",data)
             data.then((value) => {
+                let songs = value[0].songs;
                 let doc = document.body;
                 let cardsCarousel = doc.querySelector(`${location}`);
-                for (var i = 0; i < value.length; i++) {
+                for (var i = 0; i < songs.length; i++) {
                     let card = document.createElement("a");
                     card.setAttribute("class", "card");
-                    card.href = value[i].media_url;
+                    card.href = songs[i].media_url;
                     let img = document.createElement("img");
-                    img.src = value[i].image;
+                    img.src = songs[i].image;
                     let name = document.createElement("p");
-                    name.textContent = value[i].song;
+                    name.textContent = songs[i].song;
                     name.style.margin = "0%";
                     name.style.fontWeight = "bold";
                     card.append(img, name);
@@ -113,23 +113,14 @@
         }
 
         var top_cards = () => {
-            var type = "result";
-            var url = "bollywood-masala";
-            display_c(type, url, ".topCharts");
-            display_c(type, "hindi-top", ".topCharts");
-            display_c(type, "international-top", ".topCharts");
-            display_c(type, "hindi-romantic-top", ".topCharts");
-            display_c(type, "US-top", ".topCharts");
-            display_c(type, "90s-hindi-top", ".topCharts");
-            display_c(type, "UK-top", ".topCharts");
-            display_c(type, "top-searches", ".topCharts");
-            display_c(type, "pop-top", ".topCharts");
-            display_c(type, "hindi-dance-top", ".topCharts");
-            display_c(type, "daily-top", ".topCharts");
-            display_c(type, "Bhakti-top", ".topCharts");
-            display_c(type, "punjabi-top", ".topCharts");
-            display_c(type, "haryanavi-top", ".topCharts");
-            display_c(type, "Arijit-singh-top", ".topCharts");
+            var url = "https://gaana-data-api.herokuapp.com/featuredHindi";
+            display_card(url, ".topCharts");
+            display_card(url, ".topCharts");
+            display_card(url, ".topCharts");
+            display_card(url, ".topCharts");
+            display_card(url, ".topCharts");
+            display_card(url, ".topCharts");
+            display_card(url, ".topCharts");
         }
         top_cards();
     </script>

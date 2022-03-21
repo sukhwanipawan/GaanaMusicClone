@@ -78,11 +78,9 @@
     </script>
     <script>
 
-        async function requestData(type, query) {
+        async function requestData(url) {
             try {
-                let res = await fetch(
-                    `http://127.0.0.1:5000/${type}/?query=${query}&lyrics=false`
-                )
+                let res = await fetch(url)
                 let data = await res.json()
                 console.log(data);
                 return await data;
@@ -90,20 +88,22 @@
                 console.log("Something went wrong");
             }
         }
-        
-        var display_c = (type, url, location) => {
-            var data = requestData(type, url);
+
+        var display_card = (url, location) => {
+            var data = requestData(url);
+            console.log("Satya",data)
             data.then((value) => {
+                let songs = value[0].songs;
                 let doc = document.body;
                 let cardsCarousel = doc.querySelector(`${location}`);
-                for (var i = 0; i < value.length; i++) {
+                for (var i = 0; i < songs.length; i++) {
                     let card = document.createElement("a");
                     card.setAttribute("class", "card");
-                    card.href = value[i].media_url;
+                    card.href = songs[i].media_url;
                     let img = document.createElement("img");
-                    img.src = value[i].image;
+                    img.src = songs[i].image;
                     let name = document.createElement("p");
-                    name.textContent = value[i].song;
+                    name.textContent = songs[i].song;
                     name.style.margin = "0%";
                     name.style.fontWeight = "bold";
                     card.append(img, name);
@@ -113,43 +113,9 @@
         }
 
         var podcast_cards = () => {
-            var type = "result";
-            var url = "podcasts";
-            display_c(type, url, ".podcast");
-            display_c(type, "My Friend Vishnu", ".podcast");
-            display_c(type, "Tech Flix", ".podcast");
-            display_c(type, "Garv Hai", ".podcast");
-            display_c(type, "All Things Music With Sarthak", ".podcast");
-            display_c(type, "Dil Se Pallavi Ke Saath", ".podcast");
-            display_c(type, "90'S Ki Cassette With Manjula", ".podcast");
-            display_c(type, "Sarthak’s Rockumentary", ".podcast");
-            display_c(type, "Shayad-podcasts", ".podcast");
-            display_c(type, "Jai Shree Hanuman", ".podcast");
-            display_c(type, "Ye Hai Dhande Ki Baat", ".podcast");
-            display_c(type, "Nanhi Chudail", ".podcast");
-            display_c(type, "Chandrakanta", ".podcast");
-            display_c(type, "Behad", ".podcast");
-            display_c(type, "Malavgarh Ki Malvika", ".podcast");
-            display_c(type, "Darnaa Manaa Hai", ".podcast");
-            display_c(type, "Sachin Tendulkar", ".podcast");
-            display_c(type, "Bill Gates", ".podcast");
-            display_c(type, "Tony Hsieh", ".podcast");
-            display_c(type, "Lala Lajpat Rai", ".podcast");
-            display_c(type, "Mark Zuckerberg", ".podcast");
-            display_c(type, "Steve Jobs", ".podcast");
-            display_c(type, " The Left Right Game", ".podcast");
-            display_c(type, " Pattern Of Purpose", ".podcast");
-            display_c(type, " Diet Science", ".podcast");
-            display_c(type, "Fascinating Entrepreneurs", ".podcast");
-            display_c(type, "2-Minute Talk Tips", ".podcast");
-            display_c(type, "The Story Behind Her Success", ".podcast");
-            display_c(type, "Eric On The World", ".podcast");
-            display_c(type, "Live Your Best Life", ".podcast");
-            display_c(type, "Aaj Ka Rashifal", ".podcast");
-            display_c(type, "राशिफल और ज्योतिष", ".podcast");
-            display_c(type, "Your Stars Today", ".podcast");
-            display_c(type, "Astrovaani", ".podcast");
-            display_c(type, "Astrology Zoned", ".podcast");
+            var url = "https://gaana-data-api.herokuapp.com/romanticHits";
+            display_card(url, ".podcast");
+            display_card(url, ".podcast");
         }
         podcast_cards();
     </script>
