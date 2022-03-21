@@ -64,32 +64,18 @@ b2.addEventListener("click", next);
 
 async function requestData(url) {
     try {
-        let res = await fetch(
-            `http://127.0.0.1:5000/${type}/?query=${query}&lyrics=false`
-            // `https://gaana-data-api.herokuapp.com/${playlistName}`
-        )
+        let res = await fetch(url);
         let data = await res.json()
-        console.log("--->",data);
-        return await data;
-    } catch {
-        console.log("Something went wrong");
-    }
-}
-async function dataFromOwnApi(playlistName) {
-    try {
-        let res = await fetch(
-            `https://gaana-data-api.herokuapp.com/${playlistName}`
-        )
-        let data = await res.json()
-        console.log("--------------->",data);
+        console.log(data);
         return await data;
     } catch {
         console.log("Something went wrong");
     }
 }
 
-var display_card = (type, url, location) => {
-    var data = requestData(type);
+var display_card = (url, location) => {
+    var data = requestData(url);
+    console.log("Satya",data)
     data.then((value) => {
         let songs = value[0].songs;
         let doc = document.body;
@@ -110,8 +96,8 @@ var display_card = (type, url, location) => {
     })
 }
 
-var display_c = (type, url, location) => {
-    var data = requestData(type);
+var display_c = (url, location) => {
+    var data = requestData(url);
     data.then((value) => {
         let doc = document.body;
         let cardsCarousel = doc.querySelector(`${location}`);
