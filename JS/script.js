@@ -62,7 +62,7 @@ b2.addEventListener("click", next);
 // var type = "result";
 // var query = "Meri Zindagi Hai Tu";
 
-async function requestData(type, query) {
+async function requestData(url) {
     try {
         let res = await fetch(
             `http://127.0.0.1:5000/${type}/?query=${query}&lyrics=false`
@@ -91,7 +91,7 @@ async function dataFromOwnApi(playlistName) {
 var display_card = (type, url, location) => {
     var data = requestData(type);
     data.then((value) => {
-        let songs = value.songs;
+        let songs = value[0].songs;
         let doc = document.body;
         let cardsCarousel = doc.querySelector(`${location}`);
         for (var i = 0; i < songs.length; i++) {
@@ -134,41 +134,37 @@ var display_c = (type, url, location) => {
 
 
 var trending_cards = () => {
-    var type = "result";
-    var url = "https://www.jiosaavn.com/featured/trending-songs/Me5RridRfDk_";
-    display_card(type, url, ".trending");
+    var url = "https://gaana-data-api.herokuapp.com/romanticHits";
+    display_card(url, ".trending");
 }
 trending_cards();
 
 var releases_cards = () => {
-    var type = "result";
-    var url = "https://www.jiosaavn.com/featured/taaza-tunes/Me5RridRfDk_";
-    display_card(type, url, ".releases");
+    var url = "https://gaana-data-api.herokuapp.com/romanticHits";
+    display_card(url, ".releases");
 }
 releases_cards();
 
 var top_cards = () => {
-    var type = "result";
-    var url = "bollywood-masala";
-    display_c(type, url, ".topCharts");
-    display_c(type, "hindi-romantic-top", ".topCharts");
-    display_c(type, "90s-hindi-top", ".topCharts");
-    display_c(type, "top-searches", ".topCharts");
-    display_c(type, "pop-top", ".topCharts");
-    display_c(type, "hindi-dance-top", ".topCharts");
-    display_c(type, "daily-top", ".topCharts");
-    display_c(type, "Bhakti-top", ".topCharts");
-    display_c(type, "punjabi-top", ".topCharts");
-    display_c(type, "haryanavi-top", ".topCharts");
-    display_c(type, "Arijit-singh-top", ".topCharts");
+    var url = "https://gaana-data-api.herokuapp.com/featuredHindi";
+    display_card(url, ".topCharts");
+    display_card(url, ".topCharts");
+    display_card(url, ".topCharts");
+    display_card(url, ".topCharts");
+    display_card(url, ".topCharts");
+    display_card(url, ".topCharts");
+    display_card(url, ".topCharts");
+    display_card(url, ".topCharts");
+    display_card(url, ".topCharts");
+    display_card(url, ".topCharts");
+    display_card(url, ".topCharts");
 }
 top_cards();
 
 var popularInHindi_cards = () => {
-    var type = "result";
-    var url = "popular-in-hindi-songs";
-    display_c(type, url, ".popularInHindi");
-    display_c(type, url, ".popularInHindi");
+    var url = "https://gaana-data-api.herokuapp.com/romanticHits";
+    display_card(url, ".popularInHindi");
+    display_card(url, ".popularInHindi");
 }
 popularInHindi_cards();
 
@@ -293,10 +289,9 @@ var justArrived_card = (location) =>{
 justArrived_card(".arrived");
 
 var retroPlaylists_cards = () => {
-    var type = "result";
-    var url = "retro-playlists";
-    display_c(type, url, ".retro");
-    display_c(type, url, ".retro");
+    var url = "https://gaana-data-api.herokuapp.com/oldSongs";
+    display_card(url, ".retro");
+    display_card(url, ".retro");
 }
 retroPlaylists_cards();
 
@@ -347,20 +342,18 @@ var recommends_cards = (location) => {
 recommends_cards(".recommends");
 
 var gaanaOriginals_card = ()=>{
-    var type = "result";
-    display_c(type,"hindi-top-songs",".originals");
-    display_c(type,"fresh-hits",".originals");
-    var url = "gaana-originals-bollywood";
-    display_c(type, url, ".originals");
-    display_c(type,"gaana",".originals");
+    var url="https://gaana-data-api.herokuapp.com/oldSongs"
+    display_card(url,".originals");
+    display_card(url,".originals");
+    display_card(url, ".originals");
+    display_card(url,".originals");
 }
 gaanaOriginals_card();
 
 var popularInEnglish_cards = ()=>{
-    var type = "result";
-    var url = "popular-in-english";
-    display_c(type,"english-all-time-favourites",".popularInEnglish");
-    display_c(type,url,".popularInEnglish");
+    var url = "https://gaana-data-api.herokuapp.com/romanticHits";
+    display_card(url,".popularInEnglish");
+    display_card(url,".popularInEnglish");
 }
 popularInEnglish_cards();
 
@@ -436,31 +429,18 @@ var starGallery_card=(location)=>{
 starGallery_card(".starGallery");
 
 var bhakti_card=()=>{
-    var type = "result";
-    var url = "bhakti";
-    display_c(type,url,".bhakti");
-    display_c(type,"bhakti-krishana",".bhakti");
-    display_c(type,"bhakti-durga",".bhakti");
-    display_c(type,"bhakti-hanuman",".bhakti");
-    display_c(type,"bhakti-ram",".bhakti");
+    var url = "https://gaana-data-api.herokuapp.com/featuredHindiRetro";
+    display_card(url,".bhakti");
+    display_card(url,".bhakti");
+    display_c(url,".bhakti");
 }
 bhakti_card();
 
 
 var mehfilEGhazal_card =()=>{
-    var type = "result";
-    var url = "Mehafil-E-Ghazal";
-    display_c(type,url,".mehfilEGhazal");
-    display_c(type,"Sham-E-Ghazal",".mehfilEGhazal");
-    display_c(type,"Best-Of-Mehdi-Hassan",".mehfilEGhazal");
-    display_c(type,"Ghazal-Maestro-Ghulam-Ali",".mehfilEGhazal");
-    display_c(type,"Great-Ghazals-By-Anup-Jalota",".mehfilEGhazal");
-    display_c(type,"Great-Ghazals-By-Ashok-Khosla",".mehfilEGhazal");
-    display_c(type,"Great-Ghazals-By-Hariharan",".mehfilEGhazal");
-    display_c(type,"Top-Ghazals",".mehfilEGhazal");
-    display_c(type,"Romantic-Ghazal",".mehfilEGhazal");
-    display_c(type,"Ghazals-From-Films",".mehfilEGhazal");
-    display_c(type,"Jagjit-Singh-Punjabi-Hits",".mehfilEGhazal");
+    var url = "https://gaana-data-api.herokuapp.com/romanticHits";
+    display_card(url,".mehfilEGhazal");
+    display_card(url,".mehfilEGhazal");
 }
 mehfilEGhazal_card();
 
